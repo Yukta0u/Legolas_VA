@@ -111,6 +111,7 @@ def  takecommand():
     return query
 
 #to wish
+#added by yukta
 def wish():
     hour = int(datetime.datetime.now().hour)
     tt = time.strftime("%I:%M %p")
