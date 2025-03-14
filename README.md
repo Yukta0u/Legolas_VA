@@ -34,11 +34,11 @@ Run the Assistant: Start the assistant by executing:
 #### Interact via Voice Commands:
 Greeting: Legolas will greet you based on the current time.
 Example Commands:
-"Open notepad" – Launches Notepad.
-"Play music" – Plays all MP3 files from your music folder.
-"Stop music" – Stops the media player.
-"Give weather" – Prompts for a city name and provides weather details.
-"What is ..." – Searches and summarizes information from Wikipedia.
-"Open YouTube" – Asks for a search query and opens YouTube results.
-"Set timer" – Sets a countdown based on user input.
-Exit Command: Saying "ok thanks" will gracefully exit the application.
+**"Open notepad"** – Launches Notepad.
+**"Play music"** – Plays all MP3 files from your music folder.
+**"Stop music"** – Stops the media player.
+**"Give weather"** – Prompts for a city name and provides weather details.
+**"What is ..."** – Searches and summarizes information from Wikipedia.
+**"Open YouTube"** – Asks for a search query and opens YouTube results.
+**"Set timer"** – Sets a countdown based on user input.
+**"Exit Command"**: Saying "ok thanks" will gracefully exit the application.
