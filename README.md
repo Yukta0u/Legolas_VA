@@ -16,12 +16,12 @@ System Controls: Allows for shutting down, restarting, or putting the system to 
 
 ## Installation
 #### Clone the Repository:
-```git clone https://github.com/yourusername/legolas-desktop-assistant.git
-cd legolas-desktop-assistant```
+```git clone https://github.com/yourusername/legolas-desktop-assistant.git```
+```cd legolas-desktop-assistant```
 
 #### Set Up a Virtual Environment (Optional but Recommended):
-```python -m venv venv
-source venv/bin/activate   # On Windows: venv\Scripts\activate```
+```python -m venv venv```
+```source venv/bin/activate   # On Windows: venv\Scripts\activate```
 
 #### Install Dependencies: Install the required Python packages:
 ```pip install pyttsx3 SpeechRecognition wikipedia pywhatkit pyjokes requests pyautogui opencv-python```
@@ -29,7 +29,7 @@ You may also need to install additional packages (such as those for handling ema
 
 #### Usage
 Run the Assistant: Start the assistant by executing:
-```python Legolas_VA.py
+```python Legolas_VA.py```
 
 #### Interact via Voice Commands:
 Greeting: Legolas will greet you based on the current time.
