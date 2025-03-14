@@ -417,7 +417,7 @@ if __name__ == "__main__": #main program
            news()
 
 
-        #elif "email to Yukta" in query:
+        """ elif "email to Yukta" in query:
            speak("Ma'am what should i say")
            query = takecommand().lower()
            if "send a file" in query:
@@ -459,7 +459,7 @@ if __name__ == "__main__": #main program
                 text = msg.as_string()
                 server.sendmail(email, send_to_email, text)
                 server.quit()
-                speak("email has been sent to Rashmi")
+                speak("email has been sent to yukta")
 
 else:                
                 email = 'your@gmail.com' # Your email
@@ -472,7 +472,7 @@ else:
                 server.login(email, password) # Login to the email server
                 server.sendmail(email, send_to_email , message) # Send the email
                 server.quit() # Logout of the email server
-                speak("email has been sent to Yukta")#
+                speak("email has been sent to Yukta")""" 
             
 
         # speak("Ma'am, do you have any other work")
