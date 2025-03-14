@@ -34,7 +34,8 @@ def speak(audio):
     print(audio)
     engine.runAndWait()
 
-#For Fetching Weather 
+#For Fetching Weather
+#Added by yukta
 
 # Fetch weather using OpenWeatherMap API
 def get_weather(city):
@@ -62,6 +63,7 @@ def get_weather(city):
         speak("An error occurred while fetching the weather information. Please try again later.")
 
 #To Play and Stop music
+#added Mohit
 
 music_process = None  # To store the music process
 
@@ -135,6 +137,7 @@ def sendEmail(to,content):
  
 
 #for news updates
+#added ny chirag
 def news():
     api_key = 'b0f73319ea464637b7a60284e349ddab'
     main_url = f'http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey={api_key}'
@@ -204,6 +207,7 @@ if __name__ == "__main__": #main program
             stop_music()
         
         #For Fetching weather
+        #added by mohit
         elif "give weather" in query:
             speak("Please tell me the name of the city.")
             city = takecommand().lower()
@@ -243,6 +247,7 @@ if __name__ == "__main__": #main program
         
         # elif "open youtube" in query:
         #     webbrowser.open("www.youtube.com")
+        #added by mohit
         elif "open youtube" in query:
             speak("What should I search on YouTube?")
             search_query = takecommand().lower()
@@ -253,7 +258,8 @@ if __name__ == "__main__": #main program
                 speak("Search query not received. Opening YouTube homepage.")
                 webbrowser.open("https://www.youtube.com")
                 
-        #To Open Calculator      
+        #To Open Calculator
+        #added by chirag
         elif "open calculator" in query:
            speak("Opening Calculator.")
            os.system("calc")
@@ -265,6 +271,7 @@ if __name__ == "__main__": #main program
             webbrowser.open("www.stackoverflow.com")
         
         #Modified Open-Google
+        #added by yukta
         elif "open google" in query:
             speak("What should I search on Google?")
             cm = takecommand().lower()
@@ -272,7 +279,7 @@ if __name__ == "__main__": #main program
                 webbrowser.open(f"https://www.google.com/search?q={cm}")
             else:
                 speak("I couldn't understand. Please try again.")
-              
+         #added by Mohit    
         elif "open wikipedia" in query:
             speak("What should I search on Wikipedia?")
             cm = takecommand().lower()
@@ -285,6 +292,7 @@ if __name__ == "__main__": #main program
         #Modified to close Browser
         
         #1 Chrome
+        #added by Yukta
         elif 'close chrome' in query or 'lose chrome' in query:
             speak("Closing Chrome...")
             os.system("taskkill /f /im chrome.exe")
@@ -311,12 +319,12 @@ if __name__ == "__main__": #main program
 
         #     time.sleep(timing)
         #     speak('Your time has been finished sir')
-        #  modified
+        #added by chirag
         elif 'set timer' in query or 'stopwatch' in query:
             speak("For how much time? You can specify minutes or seconds.")
             timing = takecommand()  # Example input: "5 minutes" or "30 seconds"
             try:
-        # Normalize the input to lowercase and clean it up
+        
                 timing = timing.lower()
         
         # Handle minutes
@@ -329,17 +337,17 @@ if __name__ == "__main__": #main program
                     timing = timing.replace('seconds', '').replace('second', '').replace('for', '').strip()
                     timing_in_seconds = float(timing)  # Already in seconds
         
-        # If no unit is mentioned, assume seconds
+        
                 else:
                     timing_in_seconds = float(timing)
         
-        # Notify the user and start the timer
+        
                 
                 speak(f'I will remind you in {timing_in_seconds} seconds.')
                 time.sleep(timing_in_seconds)
                 speak('Your time has finished, sir.')
             except ValueError:
-        # Handle cases where the input is not a valid number
+    
                 speak("Sorry, I couldn't understand the time duration. Please try again.")   
                 
                      
@@ -364,6 +372,7 @@ if __name__ == "__main__": #main program
 
 
 #to close any application
+        #added by mohit
         elif "close notepad" in query:
          speak("okay, closing notepad")
          os.system("taskkill /f /im notepad.exe")
@@ -376,18 +385,18 @@ if __name__ == "__main__": #main program
                 songs = os.listdir(music_dir)
                 os.startfile(os.path.join(music_dir, songs[0]))
 #to find a joke
-        elif "tell me a joke" in query:
-         joke = pyjokes.get_joke()
-         speak(joke)
+        #elif "tell me a joke" in query:
+         #joke = pyjokes.get_joke()
+         #speak(joke)
 
-        elif "shut down the system" in query:
-         os.system("shutdown /s /t 5")
+        #elif "shut down the system" in query:
+         #os.system("shutdown /s /t 5")
 
-        elif "restart the system" in query:
-         os.system("shutdown /r /t 5")
+        #elif "restart the system" in query:
+         #os.system("shutdown /r /t 5")
 
-        elif "sleep the system" in query:
-         os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
+        #elif "sleep the system" in query:
+         #os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
 
 
 
@@ -408,7 +417,7 @@ if __name__ == "__main__": #main program
            news()
 
 
-        elif "email to Rashmi" in query:
+        #elif "email to Yukta" in query:
            speak("Ma'am what should i say")
            query = takecommand().lower()
            if "send a file" in query:
@@ -433,7 +442,7 @@ if __name__ == "__main__": #main program
 
                 msg.attach(MIMEText(message, 'plain'))
 
-                # Setup the attachment
+                 Setup the attachment
                 filename = os.path.basename(file_location)
                 attachment = open(file_location, "rb")
                 part = MIMEBase('application', 'octet-stream')
@@ -441,7 +450,7 @@ if __name__ == "__main__": #main program
                 encoders.encode_base64(part)
                 part.add_header('Content-Disposition', "attachment; filename= %s" % filename)
 
-                # Attach the attachment to the MIMEMultipart object
+                Attach the attachment to the MIMEMultipart object
                 msg.attach(part)
 
                 server = smtplib.SMTP('smtp.gmail.com', 587)
@@ -463,7 +472,7 @@ else:
                 server.login(email, password) # Login to the email server
                 server.sendmail(email, send_to_email , message) # Send the email
                 server.quit() # Logout of the email server
-                speak("email has been sent to Rashmi")
+                speak("email has been sent to Yukta")#
             
 
         # speak("Ma'am, do you have any other work")
